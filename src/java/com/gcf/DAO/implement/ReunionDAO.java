@@ -151,7 +151,7 @@ public class ReunionDAO extends DAO<Reunion> {
         List<Reunion> liste = new LinkedList<Reunion>();
         try {
             Statement stm = cnx.createStatement();
-            String query = "SELECT * FROM reunion order by 2 DESC";
+            String query = "SELECT * FROM reunion order by 5 DESC, 2 DESC";
             ResultSet r = stm.executeQuery(query);
             while (r.next()) {
                 Reunion c = new Reunion(r.getInt("idReunion"),
