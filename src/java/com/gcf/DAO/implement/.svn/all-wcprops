@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/70/ProjetCatalogueCFG/src/java/com/gcf/DAO/implement
+END
+PointDiscussionDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/47/ProjetCatalogueCFG/src/java/com/gcf/DAO/implement/PointDiscussionDAO.java
+END
+MiseAJourDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/67/ProjetCatalogueCFG/src/java/com/gcf/DAO/implement/MiseAJourDAO.java
+END
+ReunionDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/70/ProjetCatalogueCFG/src/java/com/gcf/DAO/implement/ReunionDAO.java
+END
+CatalogueDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/37/ProjetCatalogueCFG/src/java/com/gcf/DAO/implement/CatalogueDAO.java
+END
+MembreDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/49/ProjetCatalogueCFG/src/java/com/gcf/DAO/implement/MembreDAO.java
+END
+PermissionDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/51/ProjetCatalogueCFG/src/java/com/gcf/DAO/implement/PermissionDAO.java
+END
+DossierDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/37/ProjetCatalogueCFG/src/java/com/gcf/DAO/implement/DossierDAO.java
+END

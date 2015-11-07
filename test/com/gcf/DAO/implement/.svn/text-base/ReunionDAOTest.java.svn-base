@@ -1,0 +1,288 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.gcf.DAO.implement;
+
+import javax.servlet.http.HttpServlet;
+import com.gcf.modele.Reunion;
+import com.gcf.util.Connexion;
+import java.util.List;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Usager
+ */
+public class ReunionDAOTest {
+    
+    static private ReunionDAO rDAO;
+    public ReunionDAOTest() {
+    }
+
+    @BeforeClass
+    public static void  setUpClass() throws Exception {
+            try {
+            
+                //Chargement du pilote :
+            HttpServlet.class.forName("com.mysql.jdbc.Driver");
+            
+            } catch (ClassNotFoundException ex) {
+            
+            }
+            Connexion.setUrl("jdbc:mysql://localhost/gestioncatalogue?user=root");
+            rDAO=new ReunionDAO(Connexion.getInstance());
+    }
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    @Test
+    public void testCreate() {
+      
+        System.out.println("create");
+        Reunion x = new Reunion("1","2013-01-13 03:25:00","asd","6","Actif","2");
+        boolean result = rDAO.create(x);
+        assert(result);
+        rDAO.delete(x);
+    }
+    /*
+     testCreate()
+     * Valeur testée: Objet Reunion avec ses paramétres valides.
+     * Resultat atendu: Vrai.
+     * Resultat reçu: Vrai.
+     * Test OK!
+     */
+      @Test
+    public void testCreate2() {
+      
+        System.out.println("create2");
+        Reunion x = new Reunion("1","2013-01-13 03:25:00",null,null,"Actif","2");
+        boolean result = rDAO.create(x);
+        assert(!result);
+       }
+    /* 
+      testCreate2()
+     * Valeur testée: Objet Reunion avec paramétres null dans les champs «not null» de la bd.
+     * Resultat atendu: False.
+     * Resultat reçu: False.
+     * Test OK!
+     */
+    @Test
+    public void testRead_int() {
+        System.out.println("read");
+        int id = 13;
+        String expResult ="13" ;
+        String result = ((rDAO.read(id)).getIdReunion());
+        assertEquals(expResult, result);
+     }
+      /* 
+      testRead_int() 
+     * Valeur testée: ID d'une réunion existante dan s la bd. Valeur de return, ID de la réunion en integer
+     * Resultat atendu: True.
+     * Resultat reçu: True.
+     * Test OK!
+     */
+    @Test
+    public void testRead_int2() {
+        System.out.println("read2");
+        int id = 1;
+        Reunion result = ((rDAO.read(id)));
+        assertEquals(null,result);
+    }
+     /* 
+      testRead_int() 
+     * Valeur testée: ID d'une réunion inexistante dans la bd. 
+     * Resultat atendu: NULL
+     * Resultat reçu: NULL
+     * Test OK!
+     */
+    @Test
+    public void testRead_String() {
+        System.out.println("read");
+        String id = "13";
+        String expResult ="13" ;
+        String result = ((rDAO.read(id)).getIdReunion());
+        assertEquals(expResult, result);
+     }
+     /* 
+     testRead_String()
+     * Valeur testée: ID d'une réunion existante dan s la bd. Valeur de return, 
+     * ID de la réunion en String.
+     * Resultat atendu: True.
+     * Resultat reçu: True.
+     * Test OK!
+     */
+     @Test
+    public void testRead_String2() {
+        System.out.println("read2");
+        String id = "1";
+        Reunion result = ((rDAO.read(id)));
+        assertEquals(null,result);
+    }
+     /* 
+      testRead_int() 
+     * Valeur testée: ID d'une réunion inexistante dans la bd. 
+     * Resultat atendu: NULL
+     * Resultat reçu: NULL
+     * Test OK!
+     */
+
+    @Test
+    public void testUpdate() {
+        System.out.println("update");
+        Reunion x =rDAO.read(13);
+        Reunion x2=rDAO.read(13);
+        x.setTitre("titre");
+        String expResult = "titre";
+        rDAO.update(x);
+        String result=rDAO.read(13).getTitre();
+        assertEquals(expResult, result);
+        rDAO.update(x2);
+    }
+    /* 
+      testUpdate()  
+     * Valeur testée: Update d'un objet Réunion avec un titre different  
+     * Resultat atendu: "titre"
+     * Resultat reçu: "titre"
+     * Test OK!
+     */
+    @Test
+    public void testUpdate2() {
+        System.out.println("update2");
+        Reunion x =rDAO.read(13);
+        Reunion x2=rDAO.read(13);
+        x.setDate("abc");
+        String expResult = "abc";
+        rDAO.update(x);
+        String result=rDAO.read(13).getDate();
+        assertEquals(false,expResult.equals(result)) ;
+        rDAO.update(x2);
+    }
+    /*  
+      testUpdate2()  
+     * Valeur testée: Update d'un objet Réunion avec un date invalide 
+     * Resultat atendu: "Une date"
+     * Resultat reçu: "Une date"
+     * Test OK!
+     */
+    @Test
+    public void testDelete() {
+        System.out.println("delete");
+        Reunion x2 = new Reunion("11","2013-01-13 03:25:00","titre","6","Actif","2");
+        rDAO.create(x2);
+        Reunion x3=rDAO.readTitre("titre");
+        assertEquals(true,rDAO.delete(x3));
+      }
+     /* 
+      testUpdate()  
+     * Valeur testée: Update d'un objet Réunion avec un titre different  
+     * Resultat atendu: "titre"
+     * Resultat reçu: "titre"
+     * Test OK!
+     */
+     @Test
+    public void testDelete2() {
+        System.out.println("delete2");
+        Reunion x2 = new Reunion("-1","2013-01-13 03:25:00","titre","6","Actif","2");
+        assertEquals(false,rDAO.delete(x2));
+      }
+   /* 
+      testUpdate2()  
+     * Valeur testée: Update d'un objet Réunion avec une ID invalide 
+     * Resultat atendu: False
+     * Resultat reçu: False
+     * Test OK!
+     */
+    @Test
+    public void testFindAll_0args() {
+        System.out.println("findAll_0args()");
+        boolean result = rDAO.findAll().isEmpty();
+        assertEquals(false, result);
+     }
+    /* 
+      testFindAll_0args()
+     * Valeur testée: Sans paramétres
+     * Resultat atendu: False
+     * Resultat reçu: False
+     * Test OK!
+   */
+    @Test
+    public void testFindAll_String_String() {
+        System.out.println("findAll_String_String()");
+        String type = "idCatalogue";
+        String valeur = "2";
+        boolean result = rDAO.findAll(type,valeur).isEmpty();
+        assertEquals(false, result);
+    
+    }
+     /* 
+     testFindAll_String_String() 
+     * Valeur testée: type avec un catalogue existant.
+     * Resultat atendu: un liste avec des éléments
+     * Resultat reçu: un liste avec des éléments
+     * Test OK!
+   */ 
+    @Test
+    public void testFindAll_String_String2() {
+        System.out.println("findAll_String_String2");
+        String type = "toto";
+        String valeur = "2";
+        boolean result = rDAO.findAll(type,valeur).isEmpty();
+        assertEquals(true, result);
+    
+    }
+    /* 
+     testFindAll_String_String2() 
+     * Valeur testée: un type invalide
+     * Resultat atendu: un liste vide, true
+     * Resultat reçu: un liste vide, true
+     * Test OK!
+   */
+    @Test
+    public void testFindAllMembreCatalogue() {
+        System.out.println("findAllMembreCatalogue");
+        String idMembre = "6";
+        String idCatalogue = "2";
+        boolean result = rDAO.findAllMembreCatalogue(idMembre,idCatalogue).isEmpty();
+        assertEquals(false, result);
+
+    }
+    /* 
+     testFindAllMembreCatalogue
+     * Valeur testée: un idMembre valide
+     * Resultat atendu: un liste vide, false
+     * Resultat reçu: un liste vide, false
+     * Test OK!
+   */
+     @Test
+    public void testFindAllMembreCatalogue2() {
+        System.out.println("findAllMembreCatalogue2");
+        String idMembre = "-1";
+        String idCatalogue = "2";
+        boolean result = rDAO.findAllMembreCatalogue(idMembre,idCatalogue).isEmpty();
+        assertEquals(true, result);
+
+    }
+    /* 
+     testFindAllMembreCatalogue
+     * Valeur testée: un idMembre valide
+     * Resultat atendu: un liste vide, true
+     * Resultat reçu: un liste vide, true
+     * Test OK!
+   */
+}

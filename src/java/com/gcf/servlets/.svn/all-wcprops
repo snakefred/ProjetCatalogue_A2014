@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/68/ProjetCatalogueCFG/src/java/com/gcf/servlets
+END
+ModifierPermissionMembre.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/44/ProjetCatalogueCFG/src/java/com/gcf/servlets/ModifierPermissionMembre.java
+END
+ConsulterInfosDossierListeMAJ.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/29/ProjetCatalogueCFG/src/java/com/gcf/servlets/ConsulterInfosDossierListeMAJ.java
+END
+CheckerPermissions.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/59/ProjetCatalogueCFG/src/java/com/gcf/servlets/CheckerPermissions.java
+END
+ChercherMembreCatalogue.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/31/ProjetCatalogueCFG/src/java/com/gcf/servlets/ChercherMembreCatalogue.java
+END
+AjouterMembre.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/61/ProjetCatalogueCFG/src/java/com/gcf/servlets/AjouterMembre.java
+END
+AjouterDossier.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/58/ProjetCatalogueCFG/src/java/com/gcf/servlets/AjouterDossier.java
+END
+ConsulterListeCatalogue.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/56/ProjetCatalogueCFG/src/java/com/gcf/servlets/ConsulterListeCatalogue.java
+END
+Login.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/10/ProjetCatalogueCFG/src/java/com/gcf/servlets/Login.java
+END
+Logout.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2/ProjetCatalogueCFG/src/java/com/gcf/servlets/Logout.java
+END
+AjouterReunion.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/57/ProjetCatalogueCFG/src/java/com/gcf/servlets/AjouterReunion.java
+END
+FermerReunion.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/68/ProjetCatalogueCFG/src/java/com/gcf/servlets/FermerReunion.java
+END
+ChercherListeDossiersReunions.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/58/ProjetCatalogueCFG/src/java/com/gcf/servlets/ChercherListeDossiersReunions.java
+END
+InscriptionCatalogue.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/36/ProjetCatalogueCFG/src/java/com/gcf/servlets/InscriptionCatalogue.java
+END
+ChangerCatalogueCourant.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/49/ProjetCatalogueCFG/src/java/com/gcf/servlets/ChangerCatalogueCourant.java
+END
+AjouterMiseAJour.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/67/ProjetCatalogueCFG/src/java/com/gcf/servlets/AjouterMiseAJour.java
+END
+ConsulterInfoReunion.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/64/ProjetCatalogueCFG/src/java/com/gcf/servlets/ConsulterInfoReunion.java
+END
+AjouterCatalogue.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/11/ProjetCatalogueCFG/src/java/com/gcf/servlets/AjouterCatalogue.java
+END
