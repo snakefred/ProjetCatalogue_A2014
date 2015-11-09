@@ -93,6 +93,10 @@
         <servlet-class>com.gcf.servlets.modifierOrdreDuJour</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ModifierInfoDossier</servlet-name>
+        <servlet-class>com.gcf.servlets.ModifierInfoDossier</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>voirCRReunion</servlet-name>
         <servlet-class>com.gcf.servlets.voirCRReunion</servlet-class>
     </servlet>
@@ -179,6 +183,10 @@
     <servlet-mapping>
         <servlet-name>voirCRReunion</servlet-name>
         <url-pattern>/voirCRReunion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModifierInfoDossier</servlet-name>
+        <url-pattern>/ModifierInfoDossier</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
