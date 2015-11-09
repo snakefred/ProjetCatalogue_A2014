@@ -39,33 +39,27 @@ public class ModifierInfoDossier extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            if(request.getParameter("NewDateFermeture") != "")
-            {
-               if(request.getParameter("IDDos") != null) 
-               {
-                  String etat = (String) request.getParameter("cmbEtat");
-                  String dateFermeture = (String) request.getParameter("NewDateFermeture");
-                  String id = (String) request.getParameter("IDDos");
+            //if(request.getParameter("NewDateFermeture") != "")
+            //{
+               //if(request.getParameter("IDDos") != null) 
+               //{
+                  //String etat = (String) request.getParameter("cmbEtat");
+                  //String dateFermeture = (String) request.getParameter("NewDateFermeture");
+                  //String id = (String) request.getParameter("IDDos");
                   DossierDAO dosDAO = new DossierDAO(Connexion.getInstance());
-                  Dossier dos = dosDAO.read(id);
-                  request.setAttribute("etat",etat);
-                  request.setAttribute("dateFermeture",dateFermeture);
-               }
-            }
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ModifierInfoDossier</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ModifierInfoDossier at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-            
+                  Dossier dos = dosDAO.read((String) request.getParameter("IDDos"));
+                  dos.setEtat((String) request.getParameter("cmbEtat"));
+                  dos.setDateFermeture((String) request.getParameter("NewDateFermeture"));
+                  dosDAO.update(dos);
+                  //request.setAttribute("etat",etat);
+                  //request.setAttribute("dateFermeture",dateFermeture);
+                  request.setAttribute("dossier", dos);
+              // }
+            //}
             String url = "/index.jsp?afficherPage=voirMiseAJour";
-                RequestDispatcher r = this.getServletContext().getRequestDispatcher(url);
-                r.forward(request, response);
+            RequestDispatcher r = this.getServletContext().getRequestDispatcher(url);
+            r.forward(request, response);
+            
         } finally {
             //out.close();
         }

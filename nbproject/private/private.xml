@@ -4,10 +4,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/defsv/Documents/GitHub/ProjetCatalogue_A2014/src/java/com/gcf/servlets/modifierOrdreDuJour.java</file>
-            <file>file:/C:/Users/defsv/Documents/GitHub/ProjetCatalogue_A2014/web/voirMisesAJour.jsp</file>
-            <file>file:/C:/Users/defsv/Documents/GitHub/ProjetCatalogue_A2014/web/voirOrdreDuJour.jsp</file>
-            <file>file:/C:/Users/defsv/Documents/GitHub/ProjetCatalogue_A2014/web/modifierODJ.jsp</file>
+            <file>file:/D:/Users/Frédéric/Documents/NetBeansProjects/ProjetCatalogue_A2014/web/WEB-INF/web.xml</file>
+            <file>file:/D:/Users/Frédéric/Documents/NetBeansProjects/ProjetCatalogue_A2014/web/voirMisesAJour.jsp</file>
+            <file>file:/D:/Users/Frédéric/Documents/NetBeansProjects/ProjetCatalogue_A2014/src/java/com/gcf/servlets/modifierOrdreDuJour.java</file>
+            <file>file:/D:/Users/Frédéric/Documents/NetBeansProjects/ProjetCatalogue_A2014/web/voirOrdreDuJour.jsp</file>
+            <file>file:/D:/Users/Frédéric/Documents/NetBeansProjects/ProjetCatalogue_A2014/src/java/com/gcf/servlets/ConsulterInfosDossierListeMAJ.java</file>
+            <file>file:/D:/Users/Frédéric/Documents/NetBeansProjects/ProjetCatalogue_A2014/src/java/com/gcf/servlets/ModifierInfoDossier.java</file>
         </group>
     </open-files>
 </project-private>

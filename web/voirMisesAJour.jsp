@@ -38,36 +38,34 @@ $(document).ready(function(){
         Dossier dos = null;
         dos = (Dossier) (request.getAttribute("dossier"));
         dos = (new DossierDAO(Connexion.getInstance())).read(dos.getIdDossier());
-            %>
+    %>
 <%@page import="java.util.List"%>
 <%@page import="com.gcf.modele.MiseAJour"%>
 <a href="index.jsp?afficherPage=afficherBienvenue"><h2>Retour à la liste de dossiers</h2></a>
 <h1>Informations du dossier <%=d.getNom()%> </h1>
 <table class="nostyle">
     <form method="GET" action="ctrl.do">
-         <input type="hidden" name="action" value="modifierInfoDossier" />
-         <input type = "hidden" name = "IDDos"value="<%=d.getIdDossier()%>"
-         
-        
-         
-         
-         
-    <tr><td>Type</td><td><%=d.getType()%></td></tr>
-    <tr><td>Nom du dossier</td><td><%=d.getNom()%></td></tr>
-    <tr class="cacherInfo" ><td>État</td><td><%=d.getEtat()%></td></tr>
-    <tr class="infoModifier"><input name="cmbEtat"> <td>État</td>
-        <td><select>
-            <option value="actif">Actif</option>
-            <option value="ferme">Fermé</option>
-        </select></td>
-    </tr>
-    <tr><td>Nom du créateur</td><td><%=(String)request.getAttribute("nomCreateur")%></td></tr>
-    <tr><td>Date de création</td><td><%=d.getDateCreation()%></td></tr>
-    <%--Dans la ligne suivante, il faut changer !"null" par "null" ou ""... il faut encore tester.--%>
-    <tr class="cacherInfo"><td>Date de fermeture</td><td><%=(!"null".equals(d.getDateFermeture()))?"Ce dossier n'est pas fermé.":d.getDateFermeture()%></td></tr>
-    <tr class="infoModifier"><td>Date de fermeture</td><td><input name="NewDateFermeture" type="datetime-local"></td></tr>
-    <tr><td><a href="#" id="modifierInfo">Modifier les informations</a></td></tr>
-    <td><input type="submit" class="infoModifier" class="input-submit" value="Enregistrer"/></td>
+        <input type="hidden" name="action" value="modifierInfoDossier" />
+        <input type="hidden" name="IDDos" value="<%=d.getIdDossier()%>" />
+        <tr><td>Type</td><td><%=d.getType()%></td></tr>
+        <tr><td>Nom du dossier</td><td><%=d.getNom()%></td></tr>
+        <tr class="cacherInfo" ><td>État</td><td><%=d.getEtat()%></td></tr>
+        <tr class="infoModifier">
+            <td>État</td>
+            <td>
+                <select name="cmbEtat">
+                    <option value="actif">Actif</option>
+                    <option value="ferme">Fermé</option>
+                </select>
+            </td>
+        </tr>
+        <tr><td>Nom du créateur</td><td><%=(String)request.getAttribute("nomCreateur")%></td></tr>
+        <tr><td>Date de création</td><td><%=d.getDateCreation()%></td></tr>
+        <%--Dans la ligne suivante, il faut changer !"null" par "null" ou ""... il faut encore tester.--%>
+        <tr class="cacherInfo"><td>Date de fermeture</td><td><%=(!"null".equals(d.getDateFermeture()))?"Ce dossier n'est pas fermé.":d.getDateFermeture()%></td></tr>
+        <tr class="infoModifier"><td>Date de fermeture</td><td><input name="NewDateFermeture" type="datetime-local"></td></tr>
+        <tr><td><a href="#" id="modifierInfo">Modifier les informations</a></td></tr>
+        <td><input type="submit" class="infoModifier input-submit" value="Enregistrer"/></td>
     </form>
 </table>
   <h1>Historique du dossier</h1>  

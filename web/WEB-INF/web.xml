@@ -186,7 +186,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ModifierInfoDossier</servlet-name>
-        <url-pattern>/ModifierInfoDossier</url-pattern>
+        <url-pattern>/modifierInfoDossier</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
