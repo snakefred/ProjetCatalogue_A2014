@@ -101,6 +101,10 @@ public class controleurFrontal extends HttpServlet {
             RequestDispatcher r = this.getServletContext().getRequestDispatcher("/modifierOrdreDuJour");
             r.forward(request, response);
         }
+        if ("modifierInfoDossier".equals(action)){
+            RequestDispatcher r = this.getServletContext().getRequestDispatcher("/modifierInfoDossier");
+            r.forward(request, response);
+        }
            if ("voirCRReunion".equals(action)){
             RequestDispatcher r = this.getServletContext().getRequestDispatcher("/voirCRReunion");
             r.forward(request, response);

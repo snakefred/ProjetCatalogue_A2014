@@ -22,7 +22,6 @@ import javax.servlet.RequestDispatcher;
  *
  * @author defsv
  */
-@WebServlet(name = "ModifierInfoDossier", urlPatterns = {"/ModifierInfoDossier"})
 public class ModifierInfoDossier extends HttpServlet {
     
     /**
@@ -39,27 +38,32 @@ public class ModifierInfoDossier extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            //if(request.getParameter("NewDateFermeture") != "")
-            //{
-               //if(request.getParameter("IDDos") != null) 
-               //{
-                  //String etat = (String) request.getParameter("cmbEtat");
-                  //String dateFermeture = (String) request.getParameter("NewDateFermeture");
-                  //String id = (String) request.getParameter("IDDos");
-                  DossierDAO dosDAO = new DossierDAO(Connexion.getInstance());
-                  Dossier dos = dosDAO.read((String) request.getParameter("IDDos"));
-                  dos.setEtat((String) request.getParameter("cmbEtat"));
-                  dos.setDateFermeture((String) request.getParameter("NewDateFermeture"));
-                  dosDAO.update(dos);
-                  //request.setAttribute("etat",etat);
-                  //request.setAttribute("dateFermeture",dateFermeture);
-                  request.setAttribute("dossier", dos);
-              // }
-            //}
-            String url = "/index.jsp?afficherPage=voirMiseAJour";
-            RequestDispatcher r = this.getServletContext().getRequestDispatcher(url);
-            r.forward(request, response);
-            
+            if(request.getParameter("cmbEtat") == "ferme" && request.getParameter("NewDateFermeture") != "")
+            {
+                if(request.getParameter("idDossier") != null) 
+                {
+                    DossierDAO dosDAO = new DossierDAO(Connexion.getInstance());
+                    Dossier dos = dosDAO.read(request.getParameter("idDossier"));
+                    dos.setEtat((String) request.getParameter("cmbEtat"));
+                    dos.setDateFermeture((String) request.getParameter("NewDateFermeture"));
+                    dosDAO.update(dos);
+                    request.setAttribute("dossier", dos);
+                    String url = "/index.jsp?afficherPage=voirMAJ";
+                    RequestDispatcher r = this.getServletContext().getRequestDispatcher(url);
+                    r.forward(request, response);
+                }
+            }
+            else {
+                DossierDAO dosDAO = new DossierDAO(Connexion.getInstance());
+                Dossier dos = dosDAO.read(request.getParameter("idDossier"));
+                
+                request.setAttribute("dossier", dos);
+
+                String url = "/index.jsp?afficherPage=afficherBienvenue";
+                RequestDispatcher r = this.getServletContext().getRequestDispatcher(url);
+                r.forward(request, response);
+            }
+
         } finally {
             //out.close();
         }

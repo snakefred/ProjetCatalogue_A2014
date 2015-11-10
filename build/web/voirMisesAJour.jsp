@@ -46,7 +46,7 @@ $(document).ready(function(){
 <table class="nostyle">
     <form method="GET" action="ctrl.do">
         <input type="hidden" name="action" value="modifierInfoDossier" />
-        <input type="hidden" name="IDDos" value="<%=d.getIdDossier()%>" />
+        <input type="hidden" name="idDossier" value="<%=d.getIdDossier()%>" />
         <tr><td>Type</td><td><%=d.getType()%></td></tr>
         <tr><td>Nom du dossier</td><td><%=d.getNom()%></td></tr>
         <tr class="cacherInfo" ><td>État</td><td><%=d.getEtat()%></td></tr>
@@ -62,7 +62,7 @@ $(document).ready(function(){
         <tr><td>Nom du créateur</td><td><%=(String)request.getAttribute("nomCreateur")%></td></tr>
         <tr><td>Date de création</td><td><%=d.getDateCreation()%></td></tr>
         <%--Dans la ligne suivante, il faut changer !"null" par "null" ou ""... il faut encore tester.--%>
-        <tr class="cacherInfo"><td>Date de fermeture</td><td><%=(!"null".equals(d.getDateFermeture()))?"Ce dossier n'est pas fermé.":d.getDateFermeture()%></td></tr>
+        <tr class="cacherInfo"><td>Date de fermeture</td><td><%=("null".equals(d.getDateFermeture()))?"Ce dossier n'est pas fermé.":d.getDateFermeture()%></td></tr>
         <tr class="infoModifier"><td>Date de fermeture</td><td><input name="NewDateFermeture" type="datetime-local"></td></tr>
         <tr><td><a href="#" id="modifierInfo">Modifier les informations</a></td></tr>
         <td><input type="submit" class="infoModifier input-submit" value="Enregistrer"/></td>
